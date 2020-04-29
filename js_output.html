@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to show output</title>
+</head>
+<body>
+    <button onclick="showOutput()">4 different way to show output</button>
+    <p id="output"></p> <br>
+
+    <button onclick="window.alert('is '+(5+7))">5 + 7 = ?</button><br><br>
+
+    <button onclick="document.write('<b>cho mantor cho</b>')">Vanish everything</button> <br><br><br><br>
+<!--    Using document.write() after an HTML document is loaded, will delete all existing HTML:-->
+
+    <h2>Activate Debugging to show console.log() example</h2>
+
+    <p>F12 on your keybord will activate debugging.</p>
+    <p>Then select "Console" in the debugger menu.</p><br><br>
+
+    <script>
+        console.log("hello bro: 5+10= "+(5+10));
+        document.write("using document.write() 5 + 7 = "+(5+7)); // The document.write() method should only be used for testing.
+        function showOutput() {
+            document.getElementById('output').innerHTML = "<ol><li>innerHTML</li>" +
+                "<li>document.write()</li>" +
+                "<li>window.alert()</li>" +
+                "<li>console.log()</li></ol>";
+        }
+    </script>
+
+</body>
+</html>

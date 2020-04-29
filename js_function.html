@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js Function</title>
+</head>
+<body>
+    <h1>Js Function</h1>
+
+    <p id="para">Paragraph</p>
+    <button onclick="myFunc()">Try it</button>
+    <button onclick="changeSize()">Change size</button><br><br>
+
+    <script>
+        function myFunc(){
+            document.getElementById("para").innerHTML = "<b>Paragraph changed!</b> "+(5+6)+" "+Date();
+        }
+    </script>
+    <script src="myScript.js"></script>
+</body>
+</html>
