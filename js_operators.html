@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js operator</title>
+</head>
+<body>
+    <h1>JavaScript Operators</h1>
+
+    <script>
+        document.write("Exponential operator (**). This is same as Math.pow()<br><br>");
+        var x = 5;
+        var y = x ** 3;
+        var z = Math.pow(x,3);
+        document.write(y+" "+z);
+
+        document.write("<br><br>Operator Precedence<br><br>");
+        var a = 100 + 50 * 3;
+        //Multiplication (*) and division (/) have higher precedence than addition (+) and subtraction (-).
+        document.write("100 + 50 * 3 = "+a+"<br>");
+
+        //When many operations have the same precedence (like addition and subtraction), they are computed from left to right:
+        var b = 3 - 5 + 1;
+        document.write(b);
+
+    </script>
+</body>
+</html>
