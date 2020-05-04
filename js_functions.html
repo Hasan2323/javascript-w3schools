@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js Functions</title>
+</head>
+<body>
+    <h1>JavaScript Functions</h1>
+
+    <p id="demo"></p>
+
+    <script>
+        function myProd(p1, p2) {
+            return p1 * p2;
+        }
+        document.getElementById('demo').innerHTML = myProd(4,7);
+
+        document.write("<br><br>");
+
+        document.write("Fahrenheit to Celsius<br>");
+        var givenFah = window.prompt("Give fahrenheit: ");
+
+        function toCelsius(fahrenheit){
+            return (5/9) * (fahrenheit - 32);
+            //return ((9*fahrenheit)/5)+32; // for Celsius to Fahrenheit
+        }
+        document.write(givenFah+" to celsius is "+toCelsius(givenFah));
+
+        document.write("<br><br>");
+        var text2;
+        function locVar() {
+            var text = "Hasan";
+            text2 = "Hasan";
+            //return text;
+        }
+        document.write(text2); // text2 is local variable in locVar(). Can't access from outside;  results will be undefined.
+        document.write(text); // text is local variable in locVar(). Can't access from outside;
+
+
+    </script>
+</body>
+</html>

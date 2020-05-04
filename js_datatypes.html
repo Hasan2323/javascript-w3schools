@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js Datatype</title>
+</head>
+<body>
+    <h1>JavaScript Datatype : Objects, Array etc</h1>
+
+    <script>
+        // Object
+        var obj = {firstName: "Muhammad", lastName: "Hasan", age: 24};
+        document.write("Name: "+obj.firstName+"<br> Age: "+obj.age);
+        document.write("<br>"+typeof obj);
+
+        // Array
+        var cars = ["BMW", "AUDI", "Mercedes"];
+        document.writeln("<br><br>"+cars[1]);
+        document.write(cars+"<br>");
+        document.write(typeof cars+"<br>"); //it is showing Objects for cars(array).
+        document.write("<b>The typeof operator returns \"object\" for objects, arrays, and null. because in JavaScript arrays are objects.</b><br>")
+
+        document.write("<br>");
+        var a = 12;
+        var b = 34.44;
+        var c = "Hello";
+        var e = true;
+        document.write(typeof a+"<br>");
+        document.write(typeof b+"<br>");
+        document.write(typeof c+"<br>");
+        document.write(typeof e+"<br>");
+
+        document.write("<br>");
+
+        // Diff between undefined and null
+        var d;
+        document.write(typeof d+"<br>"); //undefined
+        var nl = null;
+        document.write(typeof nl+"<br>"); //it is showing Objects for nl(null).
+        document.writeln(d === nl); //false
+        document.write(d == nl); //true
+
+        document.write("<br><br>");
+        function myFunc() {
+
+        }
+        document.write(typeof function myFunc(){}+"<br>");
+
+
+    </script>
+</body>
+</html>

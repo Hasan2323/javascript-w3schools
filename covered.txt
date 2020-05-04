@@ -1,1 +1,1 @@
-Till Js arithmetic
+Till Js functions
