@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Objects</title>
+</head>
+<body>
+    <h1>JavaScript Objects</h1>
+    <p id="object"></p>
+
+    <script>
+        // here person is a object
+        var person = {
+            fName : "Muhammad",
+            lName : "Abid Hasan",
+            age   : 25,
+            job   : "Software Engineer",
+            fullName : function () {
+                return this.fName+" "+this.lName;
+            }
+        }
+
+        // way of accessing object property(2 ways) and method.
+        document.getElementById('object').innerHTML = person.fullName()+"("+person["age"]+") is a "+person.job+".";
+
+    </script>
+
+</body>
+</html>
