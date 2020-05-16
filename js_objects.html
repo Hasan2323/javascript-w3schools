@@ -15,13 +15,13 @@
             lName : "Abid Hasan",
             age   : 25,
             job   : "Software Engineer",
-            fullName : function () {
-                return this.fName+" "+this.lName;
+            fullName : function (prefix) {
+                return prefix+", "+this.fName+" "+this.lName;
             }
         }
 
         // way of accessing object property(2 ways) and method.
-        document.getElementById('object').innerHTML = person.fullName()+"("+person["age"]+") is a "+person.job+".";
+        document.getElementById('object').innerHTML = person.fullName("Hello")+"("+person["age"]+") is a "+person.job+".";
 
     </script>
 

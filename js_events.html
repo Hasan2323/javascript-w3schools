@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Events</title>
+</head>
+<body>
+    <h1>JavaScript Events</h1>
+
+    <hr>
+<!--    Change in same box-->
+    <button onclick="this.innerHTML='Muhammad Abid Hasan Saimon.'">What's your name?</button> <br><br>
+
+    <hr>
+<!--    ONBLUR-->
+    What's your profession: <input type="text" id="text" onblur="toCapital()">
+    <p>When you leave the input field, a function is triggered which transforms the input text to upper case. </p>
+
+    <hr>
+<!--    ONCHANGE-->
+    <p>When you type something and select a new car, a function is triggered which outputs the value of the selected car and what you typed.</p><br>
+    What's your Company name: <input type="text" id="inputText" onchange="showWhatIType()">
+    <p id="show"></p>
+    <p>Select a new car from the list.</p>
+    <select id="mySelect" onchange="showWhatISelect()">
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Volvo">Volvo</option>
+    </select>
+    <p id="showMySelect"></p> <br>
+
+    <hr>
+    <!--    ONINPUT-->
+    <p>Write something in the text field to trigger a function.</p><br>
+    What's your Company name: <input type="text" id="typeText" oninput="showWhatITyped()">
+    <p id="show2"></p>
+    <hr>
+
+
+    <script>
+        function toCapital() {
+            var x = document.getElementById("text");
+            x.value = x.value.toUpperCase();
+        }
+
+        function showWhatIType() {
+            var givenValue = document.getElementById("inputText").value;
+            document.getElementById('show').innerHTML = "You typed: "+givenValue;
+        }
+
+        function showWhatISelect() {
+            var givenValue = document.getElementById("mySelect").value;
+            document.getElementById('showMySelect').innerHTML = "You selected: "+givenValue;
+        }
+
+        function showWhatITyped() {
+            var givenValue = document.getElementById("typeText").value;
+            document.getElementById('show2').innerHTML = "You wrote: "+givenValue;
+        }
+
+    </script>
+</body>
+</html>
