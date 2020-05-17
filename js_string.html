@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Length</title>
+</head>
+<body>
+    <h1>String length</h1>
+
+    Type your name: <input type="text" id="name">
+    <p>Length: <span id="length"></span></p>
+    <button onclick="showLength()">Check length of above string</button>
+    <hr>
+
+
+
+
+    <script>
+        function showLength() {
+            var x = document.getElementById("name").value;
+            document.getElementById("length").innerHTML = x.length;
+        }
+
+        document.write("<h3>Escape Character</h3>");
+        var str1 = "Hi, My name is \"Hasan\".";
+        var str2 = 'It\'s alright.';
+        var str3 = "The character \\ is called backslash.";
+
+
+        document.write(str1+"<br>");
+        document.write(str2+"<br>");
+        document.write(str3+"<hr>");
+
+        document.write("<h3>Strings Can be Objects</h3>");
+        var str4 = "Muhammad Hasan";
+        var str5 = new String("Saimon"); // Object
+        // Don't create strings as objects. It slows down execution speed.
+        // The new keyword complicates the code. This can produce some unexpected results:
+
+        document.write(str4 + " - " + typeof str4 +"<br>");
+        document.write(str5 + " - " + typeof str5 +"<br>");
+
+    </script>
+</body>
+</html>
