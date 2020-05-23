@@ -1,2 +1,2 @@
-Till Js String
+Till Js String method
 but Js Events (20%)

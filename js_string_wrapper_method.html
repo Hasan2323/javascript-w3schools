@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js_string_wrapper_method</title>
+</head>
+<body>
+    <h1>js string wrapper method<br>These are not standard methods, and may not work as expected in all browsers.</h1>
+
+
+    <script>
+        var name = "Muhammad Abid Hasan Saimon Miad";
+
+        // use alert() to see converted html code of these wrapper.
+        //alert(name.anchor("www.google.com"));
+
+
+        document.write("Normal text: " + name + "<br>");
+        document.write("Big text: " + name.big() + "<br>");
+
+        document.write("Bold text: " + name.bold() + "<br>");
+
+        document.write("Color text: " + name.fontcolor("red") + "<br>");
+
+       document.write("font Size: " + name.fontsize(8) + "<br>");
+
+        document.write("Italic text: " + name.italics() + "<br>");
+
+        document.write("small text: " + name.small() + "<br>");
+
+        document.write("hyperlink text: " + name.link("https://boibhandar.com") + "<br>");
+
+        document.write("Strike text: " + name.strike() + "<br>");
+
+        var sqr = "2";
+        var sqr4 = "4";
+        document.write("Water = H" + sqr.sup() + "O<br>");
+        document.write("Salfuric Acid = H" + sqr.sub() + "SO" + sqr4.sub() +"<br>");
+
+
+        document.write("Blink text: " + name.blink() + "<br>"); //Only supported in Opera 12 and earlier versions.
+
+
+    </script>
+</body>
+</html>

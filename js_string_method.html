@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js String Method</title>
+</head>
+<body>
+    <h1>Js String Method</h1>
+    <h2>All string methods return a new string. They don't modify the original string.<br>
+        Formally said: Strings are <span style="font-size: 50px;">immutable</span>: Strings cannot be changed, only replaced.</h2>
+
+    <script>
+        // JavaScript String prototype Property
+        function employee(name, jobTitle, born){
+            this.name = name;
+            this.jobTitle = jobTitle;
+            this.born = born;
+        }
+        var objEmp = new employee("John doe", "Software Eng.", 1995);
+        document.write("Name: " + objEmp.name + "<br>" +
+                "Profession: " + objEmp.jobTitle);
+
+        document.write("<hr>");
+
+
+        // ###############################
+        // indexOf() and lastIndexOf()
+        // Both indexOf(), and lastIndexOf() return -1 if the text is not found.
+        var str = "Please locate where 'locate' occurs!";
+        var position = str.indexOf("locate");
+        var lastPos = str.lastIndexOf("locate");
+        document.write(str+"<br>");
+        document.write("Locate at: " + position+"<br>");
+        document.write("Last Locate at: " + lastPos+"<br>");
+
+        // Both methods accept a second parameter as the starting position for the search
+        var positionAfter = str.indexOf("locate", 10);
+        document.write("Locate at(after 10): " + positionAfter+"<br>");
+
+        var str2 = "Please locate where 'locate' occurs! another locate";
+        var lastPosBefore1 = str2.lastIndexOf("locate", 25);
+        var lastPosBefore2 = str2.lastIndexOf("locate", 20);
+        document.write(str2+"<br>");
+        document.write("Last Locate at(before 25): " + lastPosBefore1+"<br>");
+        document.write("Last Locate at(before 20): " + lastPosBefore2+"<br>");
+        document.write("<hr>");
+
+        // #############################
+        // Searching for a String in a String
+        var str3 = "Please locate where 'locate' occurs!";
+        var searchPos = str3.search("locate"); // you can put regex here as parameter.
+        document.write("searching locate at: " + searchPos+"<br>");
+
+        /*
+        * indexOf() and search(), are equal but two dif are:
+        * 1. The search() method cannot take a second start position argument.
+        * 2. The indexOf() method cannot take powerful search values (regular expressions).
+        * */
+        document.write("<hr>");
+
+        // ##############################
+        // match()
+        // Searches a string for a match against a regular expression, and returns the matches
+        var str6 = "The rain in SPAIN stays mainly in the plain";
+        var ain = str6.match(/ain/g);
+        document.write("Text : " + str6 + "<br>");
+        document.write("show all ain after fetching : " + ain + "<br>");
+        document.write("how many ain in this text? : " + ain.length + "<br>");
+        document.write("<hr>");
+
+
+        // ############################
+        /* Extracting String Parts
+        * There are 3 methods for extracting a part of a string:
+        * 1. slice(start, end)
+        * 2. substring(start, end)
+        * 3. substr(start, length)
+        * */
+        //          0123456789    987654321-
+        var name = "MuhammadAbidHasanSaimon";
+
+        //slice() method
+        var nickname = name.slice(12,17); // 12 to 16 (17-1)
+        var nicknameInReverse = name.slice(-11, -6); // count from right(start with 1 not 0): -11 to -7 (-6-1)
+        var pickSaimonInReverse = name.slice(-6, -1);
+        // you can't pick last character in this way. for this you have to omit 2nd parameter. Because
+        var pickSaimonInReverseWithout2ndParameter = name.slice(-6);
+        // If you omit the second parameter, the method will slice out the rest of the string
+
+        document.write("Full name: " + name + "<br>");
+        document.write("Nickname: " + nickname + "<br>");
+        document.write("Nickname in reverse: " + nicknameInReverse + "<br>");
+        document.write("pick Saimon in reverse: " + pickSaimonInReverse + "<br>");
+        document.write("pick Saimon in reverse without 2nd parameter: " + pickSaimonInReverseWithout2ndParameter + "<br>");
+        document.write("<hr>");
+
+        // substring() method
+        // substring() cannot accept negative indexes.
+        var nickname2 = name.substring(12,17); // 12 to 16 (17-1)
+        var knownAs = name.substring(12); // If you omit the second parameter, substring() will slice out the rest of the string.
+
+        document.write("Parental Name: " + nickname2 + "<br>");
+        document.write("Known As: " + knownAs + "<br>");
+        document.write("<hr>");
+
+        // substr() method
+        // substr() can accept negative indexes.
+        var nickname3 = name.substr(12, 5);
+        var maternalName = name.substr(17); // If you omit the second parameter, substr() will slice out the rest of the string.
+        var maternalNameInReverse = name.substr(-6); // accept negative indexes. Count from end(start with 1 not 0)
+
+        document.write("I like to be called: " + nickname3 + "<br>");
+        document.write("Maternal Name: " + maternalName + "<br>");
+        document.write("Maternal Name in reverse: " + maternalNameInReverse + "<br>");
+        document.write("<hr>");
+
+        // #########################
+        // Replacing String Content
+        // The replace() method does not change the string it is called on. It returns a new string.
+        // MOST IMP, Its case sensitive. miad won't work in this case.
+        var name = "Muhammad Abid Miad Saimon Miad";
+        var correctName = name.replace("Miad", "Hasan"); // By default, the replace() method replaces only the first match.
+        // To replace all matches, use a regular expression with a /g flag (global match).
+        var correctName1 = name.replace(/Miad/g, "Hasan");
+        document.write("My name: " + correctName + "<br>");
+        document.write("My name (replace all matches): " + correctName1 + "<br>");
+
+        // To replace case insensitive, use a regular expression with an /i flag (insensitive):
+        // Note that regular expressions are written without quotes.
+        var correctName = name.replace(/miad/i, "Hasan");
+        document.write("My name with regex: " + correctName + "<br>");
+        document.write("<hr>");
+
+        // #############################
+        // uppercase and lowarcase
+        document.write("UpperCase: " + name.toUpperCase() + "<br>");
+        document.write("lowerCase: " + name.toLowerCase() + "<br>");
+
+        // if string stays in a local languages like spanish, french etc
+        var spanish = "Buenos días, Esteban. ¿Cómo estás?";
+        document.write("Spanish Language: " + spanish + "<br>");
+        document.write("UpperCase in local Languages: " + spanish.toLocaleUpperCase() + "<br>");
+        document.write("lowerCase in local Languages: " + spanish.toLocaleLowerCase() + "<br>");
+        document.write("<hr>");
+
+        // #######################################
+        // trim() and concat()
+        var testVar = "        Hasan!      ";
+        document.write("After trim: " + testVar.trim() + "<br>");
+
+        var testVar1 = "Java";
+        var testVar2 = "Spring";
+        document.write("After concat: " + testVar1.concat(" # ", testVar2) + "<br>");
+        document.write("<hr>");
+
+        // ##############################
+        // Extracting String Characters
+        /*There are 3 methods for extracting string characters:
+        1. charAt(position)
+        2. charCodeAt(position)
+        3. Property access [ ]
+        */
+        var myName = "Hasan";
+        document.write("charAt(0): " + myName.charAt(0) + "<br>"); // prints character.
+        document.write("charCodeAt(0): " + myName.charCodeAt(0) + "<br>"); // returns a UTF-16 code (an integer between 0 and 65535).
+        document.write("String.fromCharCode(72): " + String.fromCharCode(72) + "<br>"); // Converts Unicode values to characters
+        document.write("str[0]: " + myName[0] + "<br>"); // doesn't work in Internet Explorar
+        document.write("<hr>");
+
+
+        // ##############################
+        // Converting a String to an Array
+        // split()
+        document.write("String to array: " + name.split(" ") + "<br>");
+
+        // If the separator is omitted, the returned array will contain the whole string in index [0].
+        document.write("String to array: " + name.split() + "<br>");
+
+        // If the separator is "", the returned array will be an array of single characters
+        document.write("String to array: " + name.split("") + "<br>");
+        document.write("<hr>");
+
+        // ##############################
+        // startsWith() and endsWith()
+        document.write("name starts with M? : " + name.startsWith("M") + "<br>");
+        document.write("name Ends with M? : " + name.endsWith("D") + "<br>");
+        document.write("<hr>");
+
+        // ##############################
+        //Checks whether a string contains the specified string/characters
+        document.write("is Hasan includes in name? : " + name.includes("Abid") + "<br>");
+        document.write("is S includes in name? : " + name.includes("S") + "<br>");
+        document.write("<hr>");
+
+        // #########################
+        // repeat()
+        var hello = "Hello World!";
+        document.write("Repeating : " + hello.repeat(7) + "<br>");
+        document.write("<hr>");
+
+
+
+    </script>
+</body>
+</html>
